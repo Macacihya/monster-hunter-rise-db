@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="dark h-full w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a1a1d" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Hunter's Notes: Rise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              kamura: {
+                900: '#1a1a1d', // Deep charcoal
+                800: '#2d2d32', // Dark gray
+                700: '#4a4a52', // Muted stone
+                600: '#71717a',
+                500: '#a1a1aa',
+                accent: '#d4af37', // Gold/Bronze
+                red: '#8b0000', // Deep red
+                blue: '#1e3a8a', // Deep blue
+              }
+            },
+            fontFamily: {
+              sans: ['Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body, #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Prevent native scroll */
+        overscroll-behavior: none; /* Prevent bounce */
+        touch-action: manipulation;
+      }
+      
+      /* Custom Scrollbar for a cleaner look */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #4a4a52; 
+        border-radius: 3px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #d4af37; 
+      }
+      
+      /* Firefox scrollbar */
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #4a4a52 #1a1a1d;
+      }
+      
+      /* Safe area padding for iPhones with notches/home bars */
+      .safe-pb {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-kamura-900 text-slate-200 antialiased selection:bg-kamura-accent selection:text-kamura-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
